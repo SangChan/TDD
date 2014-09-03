@@ -30,8 +30,10 @@
 - (void)testMultiplication
 {
     Dollar *five = [[Dollar alloc]initWithAmount:5];
-    [five times:2];
-    XCTAssertEqual(10, [five amount], @"10 and five times 2 is equal!");
+    Dollar *product = [five times:2];
+    XCTAssertEqual(10, [product amount], @"10 and five.amount is not equal!");
+    product = [five times:3];
+    XCTAssertEqual(15, [product amount], @"15 and five.amount is not equal!");
 }
 
 @end
