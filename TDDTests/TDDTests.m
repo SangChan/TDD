@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Dollar.h"
 
 @interface TDDTests : XCTestCase
 
@@ -26,9 +27,11 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testMultiplication
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    Dollar *five = [[Dollar alloc]initWithAmount:5];
+    [five times:2];
+    XCTAssertEqual(10, [five amount], @"10 and five times 2 is equal!");
 }
 
 @end
