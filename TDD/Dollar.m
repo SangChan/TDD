@@ -8,6 +8,9 @@
 
 #import "Dollar.h"
 
+@interface Dollar ()
+
+@end
 @implementation Dollar
 
 - (id)initWithAmount:(int) thisAmount

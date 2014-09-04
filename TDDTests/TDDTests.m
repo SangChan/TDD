@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "Dollar.h"
+#import "Franc.h"
 
 @interface TDDTests : XCTestCase
 
@@ -29,11 +30,27 @@
 
 - (void)testMultiplication
 {
-    Dollar *five = [[Dollar alloc]initWithAmount:5];
-    Dollar *product = [five times:2];
-    XCTAssertEqual(10, [product amount], @"10 and five.amount is not equal!");
-    product = [five times:3];
-    XCTAssertEqual(15, [product amount], @"15 and five.amount is not equal!");
+    Dollar *five = [[Dollar alloc] initWithAmount:5];
+    XCTAssertEqual([[[Dollar alloc] initWithAmount:10] amount], [[five times:2] amount], @"10 and five.amount is not equal!");
+    XCTAssertEqual([[[Dollar alloc] initWithAmount:15] amount], [[five times:3] amount], @"15 and five.amount is not equal!");
+}
+
+- (void)testEquality
+{
+    XCTAssertTrue([[[Dollar alloc] initWithAmount:5] equals:[[Dollar alloc] initWithAmount:5]], @"This is not!");
+    XCTAssertFalse([[[Dollar alloc] initWithAmount:5] equals:[[Dollar alloc] initWithAmount:6]], @"This is True");
+    
+    XCTAssertTrue([[[Franc alloc] initWithAmount:5] equals:[[Franc alloc] initWithAmount:5]], @"This is not!");
+    XCTAssertFalse([[[Franc alloc] initWithAmount:5] equals:[[Franc alloc] initWithAmount:6]], @"This is True");
+    
+    XCTAssertFalse([[[Dollar alloc] initWithAmount:5] equals:[[Franc alloc] initWithAmount:5]], @"This is not!");
+}
+
+- (void)testFrancMultiplication
+{
+    Franc *five = [[Franc alloc] initWithAmount:5];
+    XCTAssertEqual([[[Franc alloc] initWithAmount:10] amount], [[five times:2] amount], @"10 and five.amount is not equal!");
+    XCTAssertEqual([[[Franc alloc] initWithAmount:15] amount], [[five times:3] amount], @"15 and five.amount is not equal!");
 }
 
 @end
