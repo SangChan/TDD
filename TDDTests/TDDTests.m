@@ -30,27 +30,27 @@
 
 - (void)testMultiplication
 {
-    Dollar *five = [[Dollar alloc] initWithAmount:5];
+    Money *five = [Money dollar:5];
     XCTAssertEqual([[[Dollar alloc] initWithAmount:10] amount], [[five times:2] amount], @"10 and five.amount is not equal!");
     XCTAssertEqual([[[Dollar alloc] initWithAmount:15] amount], [[five times:3] amount], @"15 and five.amount is not equal!");
 }
 
 - (void)testEquality
 {
-    XCTAssertTrue([[[Dollar alloc] initWithAmount:5] equals:[[Dollar alloc] initWithAmount:5]], @"This is not!");
-    XCTAssertFalse([[[Dollar alloc] initWithAmount:5] equals:[[Dollar alloc] initWithAmount:6]], @"This is True");
+    XCTAssertTrue([[Money dollar:5] equals:[Money dollar:5]], @"This is not!");
+    XCTAssertFalse([[Money dollar:5] equals:[Money dollar:6]], @"This is True");
     
-    XCTAssertTrue([[[Franc alloc] initWithAmount:5] equals:[[Franc alloc] initWithAmount:5]], @"This is not!");
-    XCTAssertFalse([[[Franc alloc] initWithAmount:5] equals:[[Franc alloc] initWithAmount:6]], @"This is True");
+    XCTAssertTrue([[Money franc:5] equals:[Money franc:5]], @"This is not!");
+    XCTAssertFalse([[Money franc:5] equals:[Money franc:6]], @"This is True");
     
-    XCTAssertFalse([[[Dollar alloc] initWithAmount:5] equals:[[Franc alloc] initWithAmount:5]], @"This is not!");
+    XCTAssertFalse([[Money dollar:5] equals:[Money franc:5]], @"This is not!");
 }
 
 - (void)testFrancMultiplication
 {
-    Franc *five = [[Franc alloc] initWithAmount:5];
-    XCTAssertEqual([[[Franc alloc] initWithAmount:10] amount], [[five times:2] amount], @"10 and five.amount is not equal!");
-    XCTAssertEqual([[[Franc alloc] initWithAmount:15] amount], [[five times:3] amount], @"15 and five.amount is not equal!");
+    Franc *five = [Money franc:5];
+    XCTAssertEqual([[Money franc:10] amount], [[five times:2] amount], @"10 and five.amount is not equal!");
+    XCTAssertEqual([[Money franc:15] amount], [[five times:3] amount], @"15 and five.amount is not equal!");
 }
 
 @end

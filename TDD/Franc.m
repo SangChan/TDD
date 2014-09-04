@@ -20,7 +20,7 @@
     }
     return self;
 }
-- (Franc *)times:(int)multiplier
+- (Money *)times:(int)multiplier
 {
     return [[Franc alloc]initWithAmount:self.amount * multiplier];
 }
