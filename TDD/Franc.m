@@ -16,9 +16,5 @@
 {
     return [super initWithAmount:thisAmount currency:currency];
 }
-- (Money *)times:(int)multiplier
-{
-    return [Money franc:self.amount *multiplier];
-}
 
 @end

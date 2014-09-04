@@ -27,7 +27,7 @@
 - (BOOL)equals:(id)object
 {
     Money *money = (Money *)object;
-    return _amount == money.amount && [[self class] isEqual:[money class]];
+    return _amount == money.amount && [_currency isEqualToString:[money currency]];
 }
 + (Dollar *)dollar:(int)amount
 {
@@ -38,16 +38,19 @@
     return [[Franc alloc] initWithAmount:amount currency:@"CHF"];
 }
 
--(id)times:(int)multiplier
+-(Money *)times:(int)multiplier
 {
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
-                                 userInfo:nil];
+    return [[Money alloc] initWithAmount:_amount*multiplier currency:_currency];
 }
 
 - (NSString *)currency
 {
     return _currency;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"amount = %d , currecy = %@",_amount, _currency];
 }
 
 @end

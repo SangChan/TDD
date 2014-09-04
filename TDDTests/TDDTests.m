@@ -59,4 +59,9 @@
     XCTAssertTrue([@"CHF" isEqualToString:[[Money franc:1] currency]], @"Not Equal");
 }
 
+- (void)testDifferentClassEquality
+{
+    XCTAssertTrue([[[Money alloc]initWithAmount:10 currency:@"CHF"] equals:[[Franc alloc] initWithAmount:10 currency:@"CHF"]], @"Not Equal");
+}
+
 @end
