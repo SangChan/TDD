@@ -11,7 +11,5 @@
 
 @interface Dollar : Money
 
-- (id)initWithAmount:(int) thisAmount;
-- (id)times:(int)multiplier;
 
 @end

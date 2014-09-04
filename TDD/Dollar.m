@@ -9,20 +9,15 @@
 #import "Dollar.h"
 
 @interface Dollar ()
-
 @end
 @implementation Dollar
 
-- (id)initWithAmount:(int) thisAmount
+- (id)initWithAmount:(int)thisAmount currency:(NSString *)currency
 {
-    if (self = [super init]) {
-        self.amount = thisAmount;
-    }
-    return self;
+    return [super initWithAmount:thisAmount currency:currency];
 }
 - (Money *)times:(int)multiplier
 {
-    return [[Dollar alloc]initWithAmount:self.amount * multiplier];
+    return [Money dollar:self.amount*multiplier];
 }
-
 @end

@@ -31,8 +31,8 @@
 - (void)testMultiplication
 {
     Money *five = [Money dollar:5];
-    XCTAssertEqual([[[Dollar alloc] initWithAmount:10] amount], [[five times:2] amount], @"10 and five.amount is not equal!");
-    XCTAssertEqual([[[Dollar alloc] initWithAmount:15] amount], [[five times:3] amount], @"15 and five.amount is not equal!");
+    XCTAssertEqual([[Money dollar:10] amount], [[five times:2] amount], @"10 and five.amount is not equal!");
+    XCTAssertEqual([[Money dollar:15] amount], [[five times:3] amount], @"15 and five.amount is not equal!");
 }
 
 - (void)testEquality
@@ -51,6 +51,12 @@
     Franc *five = [Money franc:5];
     XCTAssertEqual([[Money franc:10] amount], [[five times:2] amount], @"10 and five.amount is not equal!");
     XCTAssertEqual([[Money franc:15] amount], [[five times:3] amount], @"15 and five.amount is not equal!");
+}
+
+- (void)testCurreccy
+{
+    XCTAssertTrue([@"USD" isEqualToString:[[Money dollar:1] currency]], @"Not Equal");
+    XCTAssertTrue([@"CHF" isEqualToString:[[Money franc:1] currency]], @"Not Equal");
 }
 
 @end

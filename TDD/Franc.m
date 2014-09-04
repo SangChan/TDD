@@ -9,21 +9,16 @@
 #import "Franc.h"
 
 @interface Franc ()
-
 @end
 @implementation Franc
 
-- (id)initWithAmount:(int) thisAmount
+- (id)initWithAmount:(int)thisAmount currency:(NSString *)currency
 {
-    if (self = [super init]) {
-        self.amount = thisAmount;
-    }
-    return self;
+    return [super initWithAmount:thisAmount currency:currency];
 }
 - (Money *)times:(int)multiplier
 {
-    return [[Franc alloc]initWithAmount:self.amount * multiplier];
+    return [Money franc:self.amount *multiplier];
 }
-
 
 @end
