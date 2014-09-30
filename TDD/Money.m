@@ -9,6 +9,7 @@
 #import "Money.h"
 #import "Dollar.h"
 #import "Franc.h"
+#import "Sum.h"
 
 @implementation Money
 
@@ -29,13 +30,13 @@
     Money *money = (Money *)object;
     return _amount == money.amount && [_currency isEqualToString:[money currency]];
 }
-+ (Dollar *)dollar:(int)amount
++ (Money *)dollar:(int)amount
 {
-    return [[Dollar alloc] initWithAmount:amount currency:@"USD"];
+    return [[Money alloc] initWithAmount:amount currency:@"USD"];
 }
-+ (Franc *)franc:(int)amount;
++ (Money *)franc:(int)amount;
 {
-    return [[Franc alloc] initWithAmount:amount currency:@"CHF"];
+    return [[Money alloc] initWithAmount:amount currency:@"CHF"];
 }
 
 -(Money *)times:(int)multiplier
@@ -51,6 +52,11 @@
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"amount = %d , currecy = %@",_amount, _currency];
+}
+
+- (id)plus:(Money *)addend
+{
+    return [[Sum alloc] initWithAugend:self addend:addend];
 }
 
 @end

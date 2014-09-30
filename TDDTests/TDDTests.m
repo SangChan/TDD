@@ -9,6 +9,8 @@
 #import <XCTest/XCTest.h>
 #import "Dollar.h"
 #import "Franc.h"
+#import "Bank.h"
+#import "Sum.h"
 
 @interface TDDTests : XCTestCase
 
@@ -34,7 +36,6 @@
     XCTAssertEqual([[Money dollar:10] amount], [[five times:2] amount], @"10 and five.amount is not equal!");
     XCTAssertEqual([[Money dollar:15] amount], [[five times:3] amount], @"15 and five.amount is not equal!");
 }
-
 - (void)testEquality
 {
     XCTAssertTrue([[Money dollar:5] equals:[Money dollar:5]], @"This is not!");
@@ -62,6 +63,24 @@
 - (void)testDifferentClassEquality
 {
     XCTAssertTrue([[[Money alloc]initWithAmount:10 currency:@"CHF"] equals:[[Franc alloc] initWithAmount:10 currency:@"CHF"]], @"Not Equal");
+}
+
+- (void)testSimpleAddtion
+{
+    Money *five = [Money dollar:5];
+    id sum = [five plus:five];
+    Bank *bank = [[Bank alloc] init];
+    Money *reduced = [bank reduce:sum to:@"USD"];
+    XCTAssertTrue([[Money dollar:10] amount] == [reduced amount], @"Not Equal");
+}
+
+- (void)testPlusReturnsSum
+{
+    Money *five = [Money dollar:5];
+    id result = [five plus:five];
+    Sum *sum = (Sum *)result;
+    XCTAssertEqual(five, sum.augend, @"Not Equal");
+    XCTAssertEqual(five, sum.addend, @"Not Equal");
 }
 
 @end

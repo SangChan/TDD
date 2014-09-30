@@ -22,6 +22,8 @@
 		6364412B19B6BACB00023120 /* Dollar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364412A19B6BACB00023120 /* Dollar.m */; };
 		6364412E19B84C0B00023120 /* Franc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364412D19B84C0B00023120 /* Franc.m */; };
 		6364413119B84DA500023120 /* Money.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364413019B84DA500023120 /* Money.m */; };
+		6364413519B86B3300023120 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364413419B86B3300023120 /* Bank.m */; };
+		63B297F219DA8DFB00B415A8 /* Sum.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B297F119DA8DFB00B415A8 /* Sum.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,11 @@
 		6364412D19B84C0B00023120 /* Franc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Franc.m; sourceTree = "<group>"; };
 		6364412F19B84DA500023120 /* Money.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Money.h; sourceTree = "<group>"; };
 		6364413019B84DA500023120 /* Money.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Money.m; sourceTree = "<group>"; };
+		6364413219B8622E00023120 /* ExpressionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpressionProtocol.h; sourceTree = "<group>"; };
+		6364413319B86B3300023120 /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bank.h; sourceTree = "<group>"; };
+		6364413419B86B3300023120 /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bank.m; sourceTree = "<group>"; };
+		63B297F019DA8DFB00B415A8 /* Sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sum.h; sourceTree = "<group>"; };
+		63B297F119DA8DFB00B415A8 /* Sum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sum.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +133,11 @@
 				6364412D19B84C0B00023120 /* Franc.m */,
 				6364412F19B84DA500023120 /* Money.h */,
 				6364413019B84DA500023120 /* Money.m */,
+				6364413219B8622E00023120 /* ExpressionProtocol.h */,
+				6364413319B86B3300023120 /* Bank.h */,
+				6364413419B86B3300023120 /* Bank.m */,
+				63B297F019DA8DFB00B415A8 /* Sum.h */,
+				63B297F119DA8DFB00B415A8 /* Sum.m */,
 			);
 			path = TDD;
 			sourceTree = "<group>";
@@ -259,6 +271,8 @@
 				6364413119B84DA500023120 /* Money.m in Sources */,
 				6364410B19B6B95100023120 /* AppDelegate.m in Sources */,
 				6364410719B6B95100023120 /* main.m in Sources */,
+				6364413519B86B3300023120 /* Bank.m in Sources */,
+				63B297F219DA8DFB00B415A8 /* Sum.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +469,7 @@
 				6364412519B6B95200023120 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6364412619B6B95200023120 /* Build configuration list for PBXNativeTarget "TDDTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +478,7 @@
 				6364412819B6B95200023120 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

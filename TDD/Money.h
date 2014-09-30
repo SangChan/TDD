@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ExpressionProtocol.h"
 
 @class Dollar;
 @class Franc;
-@interface Money : NSObject {
+@interface Money : NSObject<ExpressionProtocol> {
     int _amount;
     NSString *_currency;
 }
@@ -19,8 +20,9 @@
 
 - (id)initWithAmount:(int)thisAmount currency:(NSString *)currency;
 - (BOOL)equals:(id)object;
-+ (Dollar *)dollar:(int)amount;
-+ (Franc *)franc:(int)amount;
++ (id)dollar:(int)amount;
++ (id)franc:(int)amount;
+- (id)plus:(id)addend;
 //abstract
 - (id)times:(int) multiplier;
 - (NSString *)currency;
