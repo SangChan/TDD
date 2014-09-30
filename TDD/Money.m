@@ -59,4 +59,9 @@
     return [[Sum alloc] initWithAugend:self addend:addend];
 }
 
+- (Money *)reduce:(NSString *)to
+{
+    return self;
+}
+
 @end

@@ -83,4 +83,19 @@
     XCTAssertEqual(five, sum.addend, @"Not Equal");
 }
 
+- (void)testReduceSum
+{
+    id sum = [[Sum alloc] initWithAugend:[Money dollar:3] addend:[Money dollar:4]];
+    Bank *bank = [Bank new];
+    Money *result = [bank reduce:sum to:@"USD"];
+    XCTAssertEqual([[Money dollar:7] amount], [result amount], @"Not Equal");
+}
+
+- (void)testReduceMoney
+{
+    Bank *bank = [Bank new];
+    Money *result = [bank reduce:[Money dollar:1] to:@"USD"];
+    XCTAssertEqual([[Money dollar:1] amount], [result amount]);
+}
+
 @end

@@ -19,5 +19,5 @@
 @property (nonatomic) Money *addend;
 
 - (id)initWithAugend:(Money *)augend addend:(Money *)addend;
-
+- (Money *)reduce:(NSString *)to;
 @end

@@ -23,6 +23,7 @@
 + (id)dollar:(int)amount;
 + (id)franc:(int)amount;
 - (id)plus:(id)addend;
+- (Money *)reduce:(NSString *)to;
 //abstract
 - (id)times:(int) multiplier;
 - (NSString *)currency;

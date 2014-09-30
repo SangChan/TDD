@@ -8,13 +8,16 @@
 
 #import "Bank.h"
 #import "Money.h"
-
+#import "Sum.h"
+#import "ExpressionProtocol.h"
 
 @implementation Bank
 
-- (id) reduce:(id)source to:(NSString *)to
+- (Money *)reduce:(id)source to:(NSString *)to
 {
-    return [Money dollar:10];
+    if (![source respondsToSelector:@selector(reduce:)])
+        return nil;
+    return [source performSelector:@selector(reduce:) withObject:to];
 }
 
 @end

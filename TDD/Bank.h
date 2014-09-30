@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Money;
 
 @interface Bank : NSObject
-
-- (id) reduce:(id)source to:(NSString *)to;
+- (Money *) reduce:(id)source to:(NSString *)to;
 @end
