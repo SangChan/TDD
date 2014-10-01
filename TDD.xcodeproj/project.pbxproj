@@ -24,6 +24,7 @@
 		6364413119B84DA500023120 /* Money.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364413019B84DA500023120 /* Money.m */; };
 		6364413519B86B3300023120 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364413419B86B3300023120 /* Bank.m */; };
 		63B297F219DA8DFB00B415A8 /* Sum.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B297F119DA8DFB00B415A8 /* Sum.m */; };
+		63B297F519DC145400B415A8 /* Pair.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B297F419DC145400B415A8 /* Pair.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		6364413419B86B3300023120 /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bank.m; sourceTree = "<group>"; };
 		63B297F019DA8DFB00B415A8 /* Sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sum.h; sourceTree = "<group>"; };
 		63B297F119DA8DFB00B415A8 /* Sum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sum.m; sourceTree = "<group>"; };
+		63B297F319DC145400B415A8 /* Pair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pair.h; sourceTree = "<group>"; };
+		63B297F419DC145400B415A8 /* Pair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pair.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				6364413419B86B3300023120 /* Bank.m */,
 				63B297F019DA8DFB00B415A8 /* Sum.h */,
 				63B297F119DA8DFB00B415A8 /* Sum.m */,
+				63B297F319DC145400B415A8 /* Pair.h */,
+				63B297F419DC145400B415A8 /* Pair.m */,
 			);
 			path = TDD;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				6364413119B84DA500023120 /* Money.m in Sources */,
 				6364410B19B6B95100023120 /* AppDelegate.m in Sources */,
 				6364410719B6B95100023120 /* main.m in Sources */,
+				63B297F519DC145400B415A8 /* Pair.m in Sources */,
 				6364413519B86B3300023120 /* Bank.m in Sources */,
 				63B297F219DA8DFB00B415A8 /* Sum.m in Sources */,
 			);

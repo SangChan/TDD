@@ -11,4 +11,6 @@
 
 @interface Bank : NSObject
 - (Money *) reduce:(id)source to:(NSString *)to;
+- (int)rateFrom:(NSString *)from to:(NSString *)to;
+- (void)addRateFrom:(NSString *)from to:(NSString *)to withRate:(int)rate;
 @end

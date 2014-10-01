@@ -98,4 +98,12 @@
     XCTAssertEqual([[Money dollar:1] amount], [result amount]);
 }
 
+- (void)testReduceMoneyDifferentCurrency
+{
+    Bank *bank = [Bank new];
+    [bank addRateFrom:@"CHF" to:@"USD" withRate:2];
+    Money *result = [bank reduce:[Money franc:2] to:@"USD"];
+    XCTAssertEqual([Money dollar:1], result);
+}
+
 @end

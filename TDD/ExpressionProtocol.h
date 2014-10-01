@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Money;
+@class Money, Bank;
 
 @protocol ExpressionProtocol <NSObject>
 
 - (Money *)reduce:(NSString *)to;
+- (Money *)reduceWithBank:(Bank *)bank to:(NSString *)to;
 
 @end

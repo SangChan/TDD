@@ -10,6 +10,7 @@
 #import "Dollar.h"
 #import "Franc.h"
 #import "Sum.h"
+#import "Bank.h"
 
 @implementation Money
 
@@ -61,7 +62,14 @@
 
 - (Money *)reduce:(NSString *)to
 {
-    return self;
+    int rate = ([_currency isEqualToString:@"CHF"] && [to isEqualToString:@"USD"]) ? 2 : 1;
+    return [[Money alloc] initWithAmount:(_amount/rate) currency:to];
+}
+
+- (Money *)reduceWithBank:(Bank *)bank to:(NSString *)to
+{
+    int rate = [bank rateFrom:_currency to:to];
+    return [[Money alloc] initWithAmount:(_amount/rate) currency:to];
 }
 
 @end
