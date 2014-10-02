@@ -10,13 +10,7 @@
 #import "ExpressionProtocol.h"
 #import "Money.h"
 
-@interface Sum : NSObject <ExpressionProtocol> {
-    Money *_augend;
-    Money *_addend;
-}
+@interface Sum : NSObject <ExpressionProtocol>
 
-@property (nonatomic) Money *augend;
-@property (nonatomic) Money *addend;
-
-- (id)initWithAugend:(Money *)augend addend:(Money *)addend;
+- (id)initWithAugend:(id)augend addend:(id)addend;
 @end

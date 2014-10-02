@@ -10,21 +10,20 @@
 
 @implementation Sum
 
-@synthesize addend = _addend;
-@synthesize augend = _augend;
+@synthesize augend, addend;
 
-- (id)initWithAugend:(Money *)augend addend:(Money *)addend
+- (id)initWithAugend:(id)augend_ addend:(id)addend_
 {
     if (self = [super init]) {
-        _augend = augend;
-        _addend = addend;
+        self.augend = augend_;
+        self.addend = addend_;
     }
     return self;
 }
 
-- (Money *)reduceWithBank:(Bank *)bank to:(NSString *)to
+- (id)reduceWithBank:(id)bank to:(NSString *)to
 {
-    int amount = [[_augend reduceWithBank:bank to:to] amount] + [[_addend reduceWithBank:bank to:to] amount];
+    int amount = [[self.augend reduceWithBank:bank to:to] amount] + [[self.addend reduceWithBank:bank to:to] amount];
     return [[Money alloc] initWithAmount:amount currency:to];
 }
 

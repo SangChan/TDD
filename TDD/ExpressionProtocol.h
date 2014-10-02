@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Money, Bank;
 
 @protocol ExpressionProtocol <NSObject>
 
+@property (nonatomic) id augend;
+@property (nonatomic) id addend;
+
 - (id)plus:(id)addend;
-- (Money *)reduceWithBank:(Bank *)bank to:(NSString *)to;
+- (id)reduceWithBank:(id)bank to:(NSString *)to;
 
 @end

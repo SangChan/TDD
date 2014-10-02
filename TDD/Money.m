@@ -40,7 +40,7 @@
     return [[Money alloc] initWithAmount:amount currency:@"CHF"];
 }
 
--(Money *)times:(int)multiplier
+- (id)times:(int)multiplier
 {
     return [[Money alloc] initWithAmount:_amount*multiplier currency:_currency];
 }
@@ -55,7 +55,7 @@
     return [NSString stringWithFormat:@"amount = %d , currecy = %@",_amount, _currency];
 }
 
-- (id)plus:(Money *)addend
+- (id)plus:(id)addend
 {
     return [[Sum alloc] initWithAugend:self addend:addend];
 }
