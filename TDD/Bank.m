@@ -37,12 +37,17 @@
 
 - (int)rateFrom:(NSString *)from to:(NSString *)to
 {
-    int rate = _rates objectForKeyedSubscript:<#(id)#>
-    return ([from isEqualToString:@"CHF"] && [to isEqualToString:@"USD"])? 2 : 1;
+    if ([from isEqualToString:to])
+        return 1;
+    NSNumber *rate = [_rates objectForKey:[Pair sharedInstance]];
+    return [rate intValue];
 }
 - (void)addRateFrom:(NSString *)from to:(NSString *)to withRate:(int)rate
 {
-    [_rates setObject:[NSNumber numberWithInt:rate] forKey:[[Pair alloc] initWithFrom:from to:to]];
+    Pair *pair = [Pair sharedInstance];
+    [pair setFrom:from];
+    [pair setTo:to];
+    [_rates setValue:[NSNumber numberWithInt:rate] forKey:[pair hashcode]];
     
 }
 

@@ -20,6 +20,16 @@
 @synthesize from = _from;
 @synthesize to = _to;
 
+static Pair *_pair = nil;
++ (id)sharedInstance
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _pair = [[super alloc] init];
+    });
+    return _pair;
+}
+
 - (id)initWithFrom:(NSString *)from to:(NSString *)to
 {
     if (self = [super init]) {
@@ -34,9 +44,9 @@
     Pair *pair = (Pair *)object;
     return ([_from isEqualToString:[pair from]] && [_to isEqualToString:[pair to]]);
 }
-- (int)hashcode
+- (NSString *)hashcode
 {
-    return 0;
+    return @"OnlyOnePair";
 }
 
 @end

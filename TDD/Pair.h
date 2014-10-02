@@ -13,7 +13,8 @@
 @property (nonatomic) NSString *from;
 @property (nonatomic) NSString *to;
 
++ (id)sharedInstance;
 - (id)initWithFrom:(NSString *)from to:(NSString *)to;
 - (BOOL)equals:(id) object;
-- (int)hashcode;
+- (NSString *)hashcode;
 @end

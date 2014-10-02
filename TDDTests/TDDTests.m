@@ -103,7 +103,12 @@
     Bank *bank = [Bank new];
     [bank addRateFrom:@"CHF" to:@"USD" withRate:2];
     Money *result = [bank reduce:[Money franc:2] to:@"USD"];
-    XCTAssertEqual([Money dollar:1], result);
+    XCTAssertEqual([[Money dollar:1] amount], [result amount]);
+}
+
+- (void)testIdentityRate
+{
+    XCTAssertEqual(1, [[Bank new] rateFrom:@"USD" to:@"USD"]);
 }
 
 @end
