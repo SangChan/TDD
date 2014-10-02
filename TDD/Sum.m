@@ -27,10 +27,14 @@
     return [[Money alloc] initWithAmount:amount currency:to];
 }
 
-- (id)plus:(id)addend
+- (id)plus:(id)addend_
 {
-    //TODO : just stub
-    return nil;
+    return [[Sum alloc] initWithAugend:self addend:addend_];
+}
+
+- (id)times:(int)multiplier
+{
+    return [[Sum alloc] initWithAugend:[self.augend times:multiplier] addend:[self.addend times:multiplier]];
 }
 
 

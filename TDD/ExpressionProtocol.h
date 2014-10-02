@@ -15,5 +15,6 @@
 
 - (id)plus:(id)addend;
 - (id)reduceWithBank:(id)bank to:(NSString *)to;
+- (id)times:(int)multiplier;
 
 @end

@@ -121,4 +121,32 @@
     XCTAssertEqual([[Money dollar:10] amount], [result amount]);
 }
 
+- (void)testSumPlusMoney
+{
+    id fiveBucks = [Money dollar:5];
+    id tenFrancs = [Money franc:10];
+    Bank *bank = [Bank new];
+    [bank addRateFrom:@"CHF" to:@"USD" withRate:2];
+    id sum = [[[Sum alloc] initWithAugend:fiveBucks addend:tenFrancs] plus:fiveBucks];
+    Money *result = [bank reduce:sum to:@"USD"];
+    XCTAssertEqual([[Money dollar:15] amount], [result amount]);
+}
+
+- (void)testSumTimes
+{
+    id fiveBucks = [Money dollar:5];
+    id tenFrancs = [Money franc:10];
+    Bank *bank = [Bank new];
+    [bank addRateFrom:@"CHF" to:@"USD" withRate:2];
+    id sum = [[[Sum alloc] initWithAugend:fiveBucks addend:tenFrancs] times:2];
+    Money *result = [bank reduce:sum to:@"USD"];
+    XCTAssertEqual([[Money dollar:20] amount], [result amount]);
+}
+
+- (void)testPlusSameCurrencyReturnsMoney
+{
+    id sum = [[Money dollar:1] plus:[Money dollar:1]];
+    XCTAssertTrue([sum isKindOfClass:[Money class]]);
+}
+
 @end
