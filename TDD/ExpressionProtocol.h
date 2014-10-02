@@ -11,7 +11,7 @@
 
 @protocol ExpressionProtocol <NSObject>
 
-- (Money *)reduce:(NSString *)to;
+- (id)plus:(id)addend;
 - (Money *)reduceWithBank:(Bank *)bank to:(NSString *)to;
 
 @end

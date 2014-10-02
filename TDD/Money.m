@@ -60,11 +60,6 @@
     return [[Sum alloc] initWithAugend:self addend:addend];
 }
 
-- (Money *)reduce:(NSString *)to
-{
-    int rate = ([_currency isEqualToString:@"CHF"] && [to isEqualToString:@"USD"]) ? 2 : 1;
-    return [[Money alloc] initWithAmount:(_amount/rate) currency:to];
-}
 
 - (Money *)reduceWithBank:(Bank *)bank to:(NSString *)to
 {

@@ -30,9 +30,9 @@
 
 - (Money *)reduce:(id)source to:(NSString *)to
 {
-    if (![source respondsToSelector:@selector(reduce:)])
+    if (![source respondsToSelector:@selector(reduceWithBank:to:)])
         return nil;
-    return [source performSelector:@selector(reduce:) withObject:to];
+    return [source performSelector:@selector(reduceWithBank:to:) withObject:self withObject:to];
 }
 
 - (int)rateFrom:(NSString *)from to:(NSString *)to

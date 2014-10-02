@@ -22,16 +22,16 @@
     return self;
 }
 
-- (Money *)reduce:(NSString *)to
+- (Money *)reduceWithBank:(Bank *)bank to:(NSString *)to
 {
-    int amount = _augend.amount + _addend.amount;
+    int amount = [[_augend reduceWithBank:bank to:to] amount] + [[_addend reduceWithBank:bank to:to] amount];
     return [[Money alloc] initWithAmount:amount currency:to];
 }
 
-- (Money *)reduceWithBank:(Bank *)bank to:(NSString *)to
+- (id)plus:(id)addend
 {
-    int amount = _augend.amount + _addend.amount;
-    return [[Money alloc] initWithAmount:amount currency:to];
+    //TODO : just stub
+    return nil;
 }
 
 

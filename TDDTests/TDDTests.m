@@ -111,4 +111,14 @@
     XCTAssertEqual(1, [[Bank new] rateFrom:@"USD" to:@"USD"]);
 }
 
+- (void)testMixedAddition
+{
+    id fiveBucks = [Money dollar:5];
+    id tenFrancs = [Money franc:10];
+    Bank *bank = [Bank new];
+    [bank addRateFrom:@"CHF" to:@"USD" withRate:2];
+    Money *result = [bank reduce:[fiveBucks plus:tenFrancs] to:@"USD"];
+    XCTAssertEqual([[Money dollar:10] amount], [result amount]);
+}
+
 @end
