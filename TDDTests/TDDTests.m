@@ -143,10 +143,4 @@
     XCTAssertEqual([[Money dollar:20] amount], [result amount]);
 }
 
-- (void)testPlusSameCurrencyReturnsMoney
-{
-    id sum = [[Money dollar:1] plus:[Money dollar:1]];
-    XCTAssertTrue([sum isKindOfClass:[Money class]]);
-}
-
 @end
