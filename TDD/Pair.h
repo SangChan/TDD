@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Pair : NSObject
+@interface Pair : NSObject<NSCopying>
 
 @property (nonatomic) NSString *from;
 @property (nonatomic) NSString *to;

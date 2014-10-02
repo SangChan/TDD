@@ -30,6 +30,12 @@ static Pair *_pair = nil;
     return _pair;
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    id copy = _pair;
+    return copy;
+}
+
 - (id)initWithFrom:(NSString *)from to:(NSString *)to
 {
     if (self = [super init]) {
