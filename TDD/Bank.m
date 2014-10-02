@@ -39,7 +39,7 @@
 {
     if ([from isEqualToString:to])
         return 1;
-    NSNumber *rate = [_rates objectForKey:[Pair sharedInstance]];
+    NSNumber *rate = [_rates objectForKey:[[Pair sharedInstance] hashcode]];
     return [rate intValue];
 }
 - (void)addRateFrom:(NSString *)from to:(NSString *)to withRate:(int)rate
