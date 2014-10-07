@@ -12,5 +12,5 @@
 
 @interface Sum : NSObject <ExpressionProtocol>
 
-- (id)initWithAugend:(id)augend addend:(id)addend;
+- (id)initWithAugend:(id<ExpressionProtocol>)augend addend:(id<ExpressionProtocol>)addend;
 @end
