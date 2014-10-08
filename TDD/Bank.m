@@ -28,7 +28,7 @@
     return self;
 }
 
-- (Money *)reduce:(id)source to:(NSString *)to
+- (Money *)reduce:(id<ExpressionProtocol>)source to:(NSString *)to
 {
     if (![source respondsToSelector:@selector(reduceWithBank:to:)])
         return nil;

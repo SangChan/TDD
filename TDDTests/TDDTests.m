@@ -7,8 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "Dollar.h"
-#import "Franc.h"
+#import "Money.h"
 #import "Bank.h"
 #import "Sum.h"
 
@@ -49,7 +48,7 @@
 
 - (void)testFrancMultiplication
 {
-    Franc *five = [Money franc:5];
+    Money *five = [Money franc:5];
     XCTAssertEqual([[Money franc:10] amount], [[five times:2] amount], @"10 and five.amount is not equal!");
     XCTAssertEqual([[Money franc:15] amount], [[five times:3] amount], @"15 and five.amount is not equal!");
 }
@@ -58,11 +57,6 @@
 {
     XCTAssertTrue([@"USD" isEqualToString:[[Money dollar:1] currency]], @"Not Equal");
     XCTAssertTrue([@"CHF" isEqualToString:[[Money franc:1] currency]], @"Not Equal");
-}
-
-- (void)testDifferentClassEquality
-{
-    XCTAssertTrue([[[Money alloc]initWithAmount:10 currency:@"CHF"] equals:[[Franc alloc] initWithAmount:10 currency:@"CHF"]], @"Not Equal");
 }
 
 - (void)testSimpleAddtion
@@ -77,7 +71,7 @@
 - (void)testPlusReturnsSum
 {
     Money *five = [Money dollar:5];
-    id result = [five plus:five];
+    id<ExpressionProtocol> result = [five plus:five];
     Sum *sum = (Sum *)result;
     XCTAssertEqual(five, sum.augend, @"Not Equal");
     XCTAssertEqual(five, sum.addend, @"Not Equal");
@@ -113,8 +107,8 @@
 
 - (void)testMixedAddition
 {
-    id fiveBucks = [Money dollar:5];
-    id tenFrancs = [Money franc:10];
+    id<ExpressionProtocol> fiveBucks = [Money dollar:5];
+    id<ExpressionProtocol> tenFrancs = [Money franc:10];
     Bank *bank = [Bank new];
     [bank addRateFrom:@"CHF" to:@"USD" withRate:2];
     Money *result = [bank reduce:[fiveBucks plus:tenFrancs] to:@"USD"];
@@ -123,19 +117,19 @@
 
 - (void)testSumPlusMoney
 {
-    id fiveBucks = [Money dollar:5];
-    id tenFrancs = [Money franc:10];
+    id<ExpressionProtocol> fiveBucks = [Money dollar:5];
+    id<ExpressionProtocol> tenFrancs = [Money franc:10];
     Bank *bank = [Bank new];
     [bank addRateFrom:@"CHF" to:@"USD" withRate:2];
-    id sum = [[[Sum alloc] initWithAugend:fiveBucks addend:tenFrancs] plus:fiveBucks];
+    id<ExpressionProtocol> sum = [[[Sum alloc] initWithAugend:fiveBucks addend:tenFrancs] plus:fiveBucks];
     Money *result = [bank reduce:sum to:@"USD"];
     XCTAssertEqual([[Money dollar:15] amount], [result amount]);
 }
 
 - (void)testSumTimes
 {
-    id fiveBucks = [Money dollar:5];
-    id tenFrancs = [Money franc:10];
+    id<ExpressionProtocol> fiveBucks = [Money dollar:5];
+    id<ExpressionProtocol> tenFrancs = [Money franc:10];
     Bank *bank = [Bank new];
     [bank addRateFrom:@"CHF" to:@"USD" withRate:2];
     id sum = [[[Sum alloc] initWithAugend:fiveBucks addend:tenFrancs] times:2];

@@ -7,8 +7,6 @@
 //
 
 #import "Money.h"
-#import "Dollar.h"
-#import "Franc.h"
 #import "Sum.h"
 #import "Bank.h"
 
@@ -55,7 +53,7 @@
     return [NSString stringWithFormat:@"amount = %d , currecy = %@",_amount, _currency];
 }
 
-- (id<ExpressionProtocol>)plus:(id)addend
+- (id<ExpressionProtocol>)plus:(id<ExpressionProtocol>)addend
 {
     return [[Sum alloc] initWithAugend:self addend:addend];
 }

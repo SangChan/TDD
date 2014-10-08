@@ -10,10 +10,10 @@
 
 @protocol ExpressionProtocol <NSObject>
 
-@property (nonatomic) id augend;
-@property (nonatomic) id addend;
+@property (nonatomic) id<ExpressionProtocol> augend;
+@property (nonatomic) id<ExpressionProtocol> addend;
 
-- (id)plus:(id)addend;
+- (id<ExpressionProtocol>)plus:(id<ExpressionProtocol>)addend;
 - (id)reduceWithBank:(id)bank to:(NSString *)to;
 - (id)times:(int)multiplier;
 

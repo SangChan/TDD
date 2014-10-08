@@ -19,8 +19,6 @@
 		6364411619B6B95200023120 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636440FE19B6B95100023120 /* UIKit.framework */; };
 		6364411E19B6B95200023120 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6364411C19B6B95200023120 /* InfoPlist.strings */; };
 		6364412019B6B95200023120 /* TDDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364411F19B6B95200023120 /* TDDTests.m */; };
-		6364412B19B6BACB00023120 /* Dollar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364412A19B6BACB00023120 /* Dollar.m */; };
-		6364412E19B84C0B00023120 /* Franc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364412D19B84C0B00023120 /* Franc.m */; };
 		6364413119B84DA500023120 /* Money.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364413019B84DA500023120 /* Money.m */; };
 		6364413519B86B3300023120 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364413419B86B3300023120 /* Bank.m */; };
 		63B297F219DA8DFB00B415A8 /* Sum.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B297F119DA8DFB00B415A8 /* Sum.m */; };
@@ -54,10 +52,6 @@
 		6364411B19B6B95200023120 /* TDDTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TDDTests-Info.plist"; sourceTree = "<group>"; };
 		6364411D19B6B95200023120 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6364411F19B6B95200023120 /* TDDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDDTests.m; sourceTree = "<group>"; };
-		6364412919B6BACB00023120 /* Dollar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dollar.h; sourceTree = "<group>"; };
-		6364412A19B6BACB00023120 /* Dollar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dollar.m; sourceTree = "<group>"; };
-		6364412C19B84C0B00023120 /* Franc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Franc.h; sourceTree = "<group>"; };
-		6364412D19B84C0B00023120 /* Franc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Franc.m; sourceTree = "<group>"; };
 		6364412F19B84DA500023120 /* Money.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Money.h; sourceTree = "<group>"; };
 		6364413019B84DA500023120 /* Money.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Money.m; sourceTree = "<group>"; };
 		6364413219B8622E00023120 /* ExpressionProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpressionProtocol.h; sourceTree = "<group>"; };
@@ -130,10 +124,6 @@
 				6364410A19B6B95100023120 /* AppDelegate.m */,
 				6364410C19B6B95100023120 /* Images.xcassets */,
 				6364410119B6B95100023120 /* Supporting Files */,
-				6364412919B6BACB00023120 /* Dollar.h */,
-				6364412A19B6BACB00023120 /* Dollar.m */,
-				6364412C19B84C0B00023120 /* Franc.h */,
-				6364412D19B84C0B00023120 /* Franc.m */,
 				6364412F19B84DA500023120 /* Money.h */,
 				6364413019B84DA500023120 /* Money.m */,
 				6364413219B8622E00023120 /* ExpressionProtocol.h */,
@@ -271,8 +261,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6364412E19B84C0B00023120 /* Franc.m in Sources */,
-				6364412B19B6BACB00023120 /* Dollar.m in Sources */,
 				6364413119B84DA500023120 /* Money.m in Sources */,
 				6364410B19B6B95100023120 /* AppDelegate.m in Sources */,
 				6364410719B6B95100023120 /* main.m in Sources */,
